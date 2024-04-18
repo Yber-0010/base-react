@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { getContacts } from "../../../provider/product/getProduct"
 
 export async function preloadContact() {
@@ -7,11 +7,30 @@ export async function preloadContact() {
 }
 
 export const Contact = () => {
-
+    const navigate = useNavigate();
     const { contacts } = useLoaderData();
     console.log(contacts)
 
+    const gotoindex = () => {
+        navigate(-1)
+    }
+
+
     return (
-        <div>Contact</div>
+        <>
+            <div>Contact</div>
+            <Link to={'/'}>
+                <button>
+                link    
+                </button>
+            </Link>
+            <button
+                type="button"
+                onClick={() => gotoindex()}
+            >
+            Cancel
+            </button>
+
+        </>
     )
 }

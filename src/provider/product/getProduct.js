@@ -11,7 +11,7 @@ export const getProduct = () => {
     return Product
 }
 
-export const getContacts = () => {
+export const getContacts = async () => {
     const contacts = {
         id: 1,
         name: 'Contact 1',
