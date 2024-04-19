@@ -5,6 +5,7 @@ import { Index } from "../pages"
 import { Contact, preloadContact } from "../pages/contact"
 import { Product, loaderProduct } from "../pages/product"
 import { LandinLayout } from "../layout/landinLayout"
+import { About } from "../pages/about"
 
 export const LandingRouter = () => {
     const landingRouter = {
@@ -35,9 +36,13 @@ export const LandingRouter = () => {
                         element: <AuthLogin />,
                     },
                     {
+                        path: '/about',
+                        element: <About />,
+                    },
+                    {
                         path: '*',
                         element: <Navigate to='/' />,
-                    }
+                    },
                 ]
             }
         ]

@@ -1,15 +1,15 @@
-import { Outlet, Link, NavLink, useNavigate } from "react-router-dom";
+import { Outlet, Link, NavLink, useNavigate, Navigate } from "react-router-dom";
 import { AuthGuard } from "../../auth/guard/authGuard";
 
 export const BackofficeLayout = () => {
+	console.log('se imprimio Auth', AuthGuard())
 	const navigate = useNavigate();
-
 	const logout = () => {
 		localStorage.removeItem('auth')
 		navigate('/')
 	}
-
-	return (
+    return AuthGuard() 
+	? 
 		<>
 			<div>BackofficeLayout</div>
 			<nav>
@@ -28,8 +28,9 @@ export const BackofficeLayout = () => {
 					</li>
 				</ul>
 			</nav>
-			<AuthGuard route={'/'}/>
-			{/* <Outlet /> */}
+			<Outlet />
 		</>
-	)
+	: <Navigate to={'/'} />;
+
+	
 }
