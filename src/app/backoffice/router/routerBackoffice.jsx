@@ -1,3 +1,4 @@
+import { RequireAuthGuard } from "../../guard/requireAuthGuard";
 import { Error404 } from "../../pages/error404"
 import { BackofficeLayout } from "../layout/backofficeLayout"
 import { Tickets } from "../pages/tickets"
@@ -7,8 +8,12 @@ import { Navigate } from 'react-router-dom';
 export const RouterBackoffice = () => {
     const backofficeRouter = {
         path: '',
-        element: <BackofficeLayout />,
-        errorElement: <Error404 />,
+        element: 
+            <RequireAuthGuard>
+                <BackofficeLayout />
+            </RequireAuthGuard>,
+        errorElement: 
+            <Error404 />,
         children: [
             {
                 path: 'dashboard',

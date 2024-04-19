@@ -1,9 +1,8 @@
 
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const AuthLogin = () => {
   const navigate = useNavigate();
-
   const login = () => {
     localStorage.setItem('auth', 'true')
     navigate('/dashboard/user')

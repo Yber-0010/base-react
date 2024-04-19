@@ -32,11 +32,7 @@ export const LandingRouter = () => {
                         loader: preloadContact,
                     },
                     {
-                        path: 'login',
-                        element: <AuthLogin />,
-                    },
-                    {
-                        path: '/about',
+                        path: 'about',
                         element: <About />,
                     },
                     {
