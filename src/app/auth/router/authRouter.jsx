@@ -1,16 +1,16 @@
 import { Error404 } from "../../pages/error404"
 import { AuthLayout } from "../layout/authLayout"
 import { AuthLogin } from "../pages/authLogin"
-import { AdminGuard } from './../../guard/adminGuard';
+import { AuthGuard } from '../../guard/authGuard';
 
 
 export const AuthRouter = () => {
 	const authRouter = {
 		path: '',
 		element: 
-			<AdminGuard>
+			<AuthGuard>
 				<AuthLayout />
-			</AdminGuard>,
+			</AuthGuard>,
 		errorElement: <Error404 />,
 		children: [
 			{

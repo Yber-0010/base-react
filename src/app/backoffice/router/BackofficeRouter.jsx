@@ -1,17 +1,17 @@
-import { RequireAuthGuard } from "../../guard/requireAuthGuard";
+import { BackofficeGuard } from "../../guard/backofficeGuard";
 import { Error404 } from "../../pages/error404"
 import { BackofficeLayout } from "../layout/backofficeLayout"
 import { Tickets } from "../pages/tickets"
 import { Users } from "../pages/users"
 import { Navigate } from 'react-router-dom';
 
-export const RouterBackoffice = () => {
+export const BackofficeRouter = () => {
     const backofficeRouter = {
         path: '',
         element: 
-            <RequireAuthGuard>
+            <BackofficeGuard>
                 <BackofficeLayout />
-            </RequireAuthGuard>,
+            </BackofficeGuard>,
         errorElement: 
             <Error404 />,
         children: [

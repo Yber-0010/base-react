@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { RouterBackoffice } from '../app/backoffice/router/routerBackoffice';
+import { BackofficeRouter } from '../app/backoffice/router/BackofficeRouter';
 import { LandingRouter } from '../app/landing/router/landingRouter';
 import { AuthRouter } from '../app/auth/router/authRouter';
 
@@ -8,7 +8,7 @@ const router = createBrowserRouter([
 		children: [
 			AuthRouter(),
 			LandingRouter(),
-			RouterBackoffice(),
+			BackofficeRouter(),
 		]
 	}
 ])

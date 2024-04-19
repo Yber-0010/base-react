@@ -1,5 +1,11 @@
-export const AuthGuard = () => {
-    const isAuth = localStorage.getItem('auth')
-    const auth = isAuth === 'true' ? true : false;
-    return auth
+import { Navigate, useLocation } from 'react-router-dom';
+import { useCheckAuthenticated } from '../hooks/useCheckAuthenticated';
+
+export const AuthGuard = ({ children }) => {
+    let auth = useCheckAuthenticated();
+    let location = useLocation();
+    if (auth) {
+        return <Navigate to="/dashboard" state={{ from: location }} replace />;
+    }
+    return children;
 }

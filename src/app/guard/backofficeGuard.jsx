@@ -1,8 +1,8 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { AuthGuard } from "./authGuard";
+import { useCheckAuthenticated } from "../hooks/useCheckAuthenticated";
 
-export const RequireAuthGuard = ({ children }) => {
-    let auth = AuthGuard();
+export const BackofficeGuard = ({ children }) => {
+    let auth = useCheckAuthenticated();
     let location = useLocation();
     if (!auth) {
         return <Navigate to="/login" state={{ from: location }} replace />;
