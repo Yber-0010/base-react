@@ -1,48 +1,49 @@
 import { Navigate } from "react-router-dom"
-import { AuthLogin } from "../../auth/pages/authLogin"
 import { Error404 } from "../../pages/error404"
 import { Index } from "../pages"
 import { Contact, preloadContact } from "../pages/contact"
 import { Product, loaderProduct } from "../pages/product"
 import { LandinLayout } from "../layout/landinLayout"
 import { About } from "../pages/about"
+import { LandingMetaData } from "./landingMetaData"
 
 export const LandingRouter = () => {
-    const landingRouter = {
-        path: '',
-        element: <LandinLayout />,
-        errorElement: <Error404 />,
-        children: [
-            {
-                path: '/',
-                errorElement: <Error404 />,
-                children: [
-                    {
-                        index: true,
-                        element: <Index />,
-                    },
-                    {
-                        path: 'product/:id',
-                        element: <Product />,
-                        loader: loaderProduct
-                    },
-                    {
-                        path: 'contact',
-                        element: <Contact />,
-                        loader: preloadContact,
-                    },
-                    {
-                        path: 'about',
-                        element: <About />,
-                    },
-                    {
-                        path: '*',
-                        element: <Navigate to='/' />,
-                    },
-                ]
-            }
-        ]
+	const { index, product, contact, about } = LandingMetaData()
+	const landingRouter = {
+		path: '',
+		element: <LandinLayout />,
+		errorElement: <Error404 />,
+		children: [
+			{
+				path: '/',
+				errorElement: <Error404 />,
+				children: [
+					{
+						index: true,
+						element: <Index metaData={index} />,
+					},
+					{
+						path: 'product/:id',
+						element: <Product metaData={product} />,
+						loader: loaderProduct
+					},
+					{
+						path: 'contact',
+						element: <Contact metaData={contact} />,
+						loader: preloadContact,
+					},
+					{
+						path: 'about',
+						element: <About metaData={about} />,
+					},
+					{
+						path: '*',
+						element: <Navigate to='/' />,
+					},
+				]
+			}
+		]
 
-    }
-    return landingRouter
+	}
+	return landingRouter
 }

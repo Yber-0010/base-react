@@ -1,26 +1,28 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import { MetaTags } from "../../helpers/MetaTags";
 
 export async function loaderProduct({ params }) {
-  const id = params.id;
-  if (id === "2") {
-    throw new Response("", {
-      status: 404,
-      statusText: "Not Found",
-    });
-  }
-  return { params };
+	const id = params.id;
+	if (id === "2") {
+		throw new Response("", {
+			status: 404,
+			statusText: "Not Found",
+		});
+	}
+	return { params };
 }
 
-export const Product = () => {
-  const { params } = useLoaderData();
-  console.log( 'params', params )
+export const Product = ({ metaData }) => {
+	const { params } = useLoaderData();
+	console.log('params', params)
 
-  return (
-    <div>
-      <br />
-      <p>
-        product
-      </p>
-    </div>
-  )
+	return (
+		<>
+			<MetaTags metaData={metaData} />
+			<br />
+			<p>
+				product
+			</p>
+		</>
+	)
 }

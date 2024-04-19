@@ -1,7 +1,11 @@
+import { MetaTags } from "../../helpers/MetaTags"
 
-export const Users = () => {
-  console.log('se imprimio el users')
-  return (
-    <div>Users</div>
-  )
+export const Users = ({ metaData }) => {
+
+	return (
+		<>
+			<MetaTags metaData={metaData} />
+			<div>Users</div>
+		</>
+	)
 }

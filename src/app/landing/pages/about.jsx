@@ -1,6 +1,10 @@
+import { MetaTags } from "../../helpers/MetaTags"
 
-export const About = () => {
-  return (
-    <div>About</div>
-  )
+export const About = ({ metaData }) => {
+	return (
+		<>
+			<MetaTags metaData={metaData} />
+			<div>About</div>
+		</>
+	)
 }

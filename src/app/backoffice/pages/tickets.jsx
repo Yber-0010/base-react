@@ -1,6 +1,10 @@
+import { MetaTags } from "../../helpers/MetaTags"
 
-export const Tickets = () => {
-  return (
-    <div>Tickets</div>
-  )
+export const Tickets = ({ metaData }) => {
+	return (
+		<>
+			<MetaTags metaData={metaData} />
+			<div>Tickets</div>
+		</>
+	)
 }

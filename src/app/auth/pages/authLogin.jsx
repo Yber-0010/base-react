@@ -1,24 +1,27 @@
 
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { MetaTags } from './../../helpers/MetaTags';
 
-export const AuthLogin = () => {
-  const navigate = useNavigate();
-  const login = () => {
-    localStorage.setItem('auth', 'true')
-    navigate('/dashboard/user')
-  }
+export const AuthLogin = ({ metaData }) => {
 
-  return (
-    <>
-      <h1>
-        LOGIN
-      </h1>
-      <hr />
-      <button
-        onClick={login}
-      >
-        sign in
-      </button>
-    </>
-  )
+	const navigate = useNavigate();
+	const login = () => {
+		localStorage.setItem('auth', 'true')
+		navigate('/dashboard/user')
+	}
+
+	return (
+		<>
+			<MetaTags metaData={metaData} />
+			<h1>
+				LOGIN
+			</h1>
+			<hr />
+			<button
+				onClick={login}
+			>
+				sign in
+			</button>
+		</>
+	)
 }
