@@ -14,7 +14,7 @@ export const BackofficeLayout = () => {
 			<nav>
 				<ul>
 					<li>
-						<Link to={`/`}>Home</Link>
+						<Link to={`index`}>Home</Link>
 					</li>
 					<li>
 						<Link to={`dashboard/user`}>users</Link>

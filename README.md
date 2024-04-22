@@ -1,8 +1,26 @@
-# React + Vite
+# base router react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+in this proyect I use method createHashRouter in AppRouter, this when you need serv in /other path 
+but you can use createBrowserRouter when you need use root path /
 
-Currently, two official plugins are available:
+the result when you build, if you use createHashRouter, you need to change href or src of "/" to "./" or "" notingh.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+with react router dom
+
+install
+```bash
+yarn
+```
+
+run
+```bash
+yarn run dev
+```
+
+build
+```bash
+yarn run build
+```
+
+example
+[https://iberchambi.mi-galeria.com/base-react4/]

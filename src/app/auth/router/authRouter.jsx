@@ -16,7 +16,6 @@ export const AuthRouter = () => {
 		errorElement: <Error404 />,
 		children: [
 			{
-				path: '/',
 				errorElement: <Error404 />,
 				children: [
 					{

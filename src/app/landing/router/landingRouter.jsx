@@ -15,11 +15,14 @@ export const LandingRouter = () => {
 		errorElement: <Error404 />,
 		children: [
 			{
-				path: '/',
 				errorElement: <Error404 />,
 				children: [
 					{
 						index: true,
+						element: <Navigate to='index' />,
+					},
+					{
+						path: 'index',
 						element: <Index metaData={index} />,
 					},
 					{
