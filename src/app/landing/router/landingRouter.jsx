@@ -18,10 +18,6 @@ export const LandingRouter = () => {
 				errorElement: <Error404 />,
 				children: [
 					{
-						index: true,
-						element: <Navigate to='index' />,
-					},
-					{
 						path: 'index',
 						element: <Index metaData={index} />,
 					},
@@ -38,10 +34,6 @@ export const LandingRouter = () => {
 					{
 						path: 'about',
 						element: <About metaData={about} />,
-					},
-					{
-						path: '*',
-						element: <Navigate to='/' />,
 					},
 				]
 			}
