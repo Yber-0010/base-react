@@ -24,3 +24,4 @@ yarn run build
 
 example
 [https://iberchambi.mi-galeria.com/base-react4/]
+[https://yber-0010.github.io/base-react/#/index]
