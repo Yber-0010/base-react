@@ -1,13 +1,13 @@
-import { Outlet, Link, NavLink, useNavigate, Navigate, useLoaderData } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
+import { useStorage } from "../../hooks/useStorage";
 
 export const BackofficeLayout = () => {
-	console.log('se imprimio layout')
 	const navigate = useNavigate();
+	const { removeAllStorage } = useStorage();
 	const logout = () => {
-		localStorage.removeItem('auth')
+		removeAllStorage();
 		navigate('/')
 	}
-
 	return (
 		<>
 			<div>BackofficeLayout</div>

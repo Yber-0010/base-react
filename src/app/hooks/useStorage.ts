@@ -1,9 +1,13 @@
+import  secureLocalStorage  from  "react-secure-storage";
 
-export const storage = () => {
+const ls = secureLocalStorage;
+// const ls = localStorage;
+
+export const useStorage = () => {
 	
 	const setStorage = (key:string,value:object):boolean => {
 		try {
-			localStorage.setItem(key, JSON.stringify(value));
+			ls.setItem(key, JSON.stringify(value));
 			return true;
 		} catch (error) {
 			console.log(error);
@@ -12,7 +16,7 @@ export const storage = () => {
 	}
 	const getStorage = (key:string):object => {
 		try {
-			return JSON.parse(localStorage.getItem(key) || '{}');
+			return JSON.parse(ls.getItem(key) as string || '{}');
 		} catch (error) {
 			console.log(error);
 			return JSON.parse('{}');
@@ -20,7 +24,7 @@ export const storage = () => {
 	}
 	const removeStorage = (key:string):boolean => {
 		try {
-			localStorage.removeItem(key);
+			ls.removeItem(key);
 			return true;
 		} catch (error) {
 			console.log(error);
@@ -29,7 +33,7 @@ export const storage = () => {
 	}
 	const existStorage = (key:string):boolean => {
 		try {
-			return localStorage.getItem(key) !== null;
+			return ls.getItem(key) !== null;
 		} catch (error) {
 			console.log(error);
 			return false;
@@ -37,7 +41,7 @@ export const storage = () => {
 	}
 	const removeAllStorage = () => {
 		try {
-			localStorage.clear();
+			ls.clear();
 			return true
 		} catch (error) {
 			console.log(error);

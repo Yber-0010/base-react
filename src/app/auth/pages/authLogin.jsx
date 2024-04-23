@@ -1,13 +1,16 @@
 
 import { useNavigate } from 'react-router-dom'
 import { MetaTags } from './../../helpers/MetaTags';
+import { useStorage } from '../../hooks/useStorage';
+import { keyStorage } from './../../../provider/storage/keyStorage';
 
 export const AuthLogin = ({ metaData }) => {
-
+	const { auth } = keyStorage();
 	const navigate = useNavigate();
+	const { setStorage } = useStorage();
 	const login = () => {
-		localStorage.setItem('auth', 'true')
-		navigate('/dashboard/user')
+		setStorage(auth, { auth:"true"});
+		navigate('/dashboard/user');
 	}
 
 	return (
