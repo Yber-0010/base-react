@@ -8,7 +8,7 @@ import { AuthMetaData } from "./authMetaData";
 export const AuthRouter = () => {
 	const { authLogin } = AuthMetaData();
 	const authRouter = {
-		path: '',
+		path: '/',
 		element:
 			<AuthGuard>
 				<AuthLayout />

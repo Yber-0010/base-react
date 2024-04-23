@@ -5,7 +5,7 @@ import { AuthRouter } from '../app/auth/router/authRouter';
 import { Error404 } from '../app/pages/error404';
 import { BaseRouter } from './BaseRouter';
 
-const baseRoute = 'index';
+const baseRoute = '/index';
 const router = createHashRouter([
 	{
 		errorElement: <Error404 />,

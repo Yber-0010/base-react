@@ -9,7 +9,7 @@ import { BackofficeMetaData } from "./backofficeMetaData";
 export const BackofficeRouter = () => {
 	const { users, tickets } = BackofficeMetaData()
 	const backofficeRouter = {
-		path: '',
+		path: '/',
 		element:
 			<BackofficeGuard>
 				<BackofficeLayout />

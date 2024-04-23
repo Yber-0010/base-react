@@ -10,7 +10,7 @@ import { LandingMetaData } from "./landingMetaData"
 export const LandingRouter = () => {
 	const { index, product, contact, about } = LandingMetaData()
 	const landingRouter = {
-		path: '',
+		path: '/',
 		element: <LandinLayout />,
 		errorElement: <Error404 />,
 		children: [
