@@ -1,8 +1,9 @@
-import React, {useState, createContext} from 'react';
+import React, { useState, createContext } from 'react';
 import en from '../../lang/en-US.json';
 import es from '../../lang/es-ES.json';
-import {IntlProvider} from 'react-intl';
-
+import { IntlProvider } from 'react-intl';
+import { useStorage } from '../hooks/useStorage';
+import { keyStorage } from '../../provider/storage/keyStorage';
 
 type LangContextType = {
 	establecerLenguaje: (lenguaje: string) => void;
@@ -10,53 +11,59 @@ type LangContextType = {
 
 const langContext = createContext<LangContextType | undefined>(undefined);
 
-const LangProvider = ({children}) => {
-	let localePorDefecto:string='en-US';
-	let mensajesPorDefecto:{}= en;
-	const lang = localStorage.getItem('lang');
+const lenguajes = [
+	{ locale: 'es-ES', message: es },
+	{ locale: 'en-US', message: en }
+]
 
-	if(lang){
-		localePorDefecto = lang
+const LangProvider = ({ children }) => {
 
-		if(lang === 'es-ES'){
-			mensajesPorDefecto = es;
-		} else if(lang === 'en-US'){
-			mensajesPorDefecto = en
-		} else {
-			localePorDefecto = 'en-US'
-			mensajesPorDefecto = en
-		}
+	const { setStorage, getStorage } = useStorage();
+	const { lang } = keyStorage();
+
+	let localePorDefecto: string = lenguajes[0].locale;
+	let mensajesPorDefecto: {} = es;
+	let { lang: lan }: any = getStorage(lang);
+	if (lan === undefined) { lan = localePorDefecto; }
+	console.log(lan)
+	if (lan) {
+		lenguajes.map((l) => {
+			if (l.locale === lan) {
+				mensajesPorDefecto = l.message;
+				localePorDefecto = lan;
+			}
+		})
 	}
 
 	const [mensajes, establecerMensajes] = useState(mensajesPorDefecto);
 	const [locale, establecerLocale] = useState(localePorDefecto);
 
-	const establecerLenguaje = (lenguaje:string) => {
-		switch (lenguaje){
-			case 'es-ES':
-				establecerMensajes(es);
-				establecerLocale('es-ES');
-				localStorage.setItem('lang', 'es-ES');
-				break;
-			case 'en-US':
-				establecerMensajes(en);
-				establecerLocale('en-US');
-				localStorage.setItem('lang', 'en-US');
-				break;
-			default:
-				establecerMensajes(en);
-				establecerLocale('en-US');
-				localStorage.setItem('lang', 'en-US');
-		}
+	const actions = (l = lenguajes) => {
+		const setLanguage: {} = {};
+
+		lenguajes.map((l) => {
+			setLanguage[l.locale] = () => {
+				establecerMensajes(l.message);
+				establecerLocale(l.locale);
+				setStorage(lang, { lang: l.locale });
+			}
+		})
+
+		return setLanguage;
+	}
+	const establecerLenguaje = (lenguaje: string) => {
+		if (lenguajes.find((l) => l.locale === lenguaje) === undefined) { lenguaje = localePorDefecto; }
+		const setLanguage = actions()
+		setLanguage[lenguaje]()
 	}
 
 	return (
-		<langContext.Provider value={{establecerLenguaje: establecerLenguaje}}>
+		<langContext.Provider value={{ establecerLenguaje: establecerLenguaje }}>
 			<IntlProvider locale={locale} messages={mensajes}>
 				{children}
 			</IntlProvider>
 		</langContext.Provider>
 	);
 }
- 
-export {LangProvider, langContext};
+
+export { LangProvider, langContext };

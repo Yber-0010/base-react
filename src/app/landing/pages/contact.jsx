@@ -4,6 +4,8 @@ import { getContacts } from "../../../provider/product/getProduct"
 import { MetaTags } from "../../helpers/MetaTags";
 import { langContext } from "../../context/langContext";
 import { FormattedMessage } from "react-intl";
+import { useStorage } from './../../hooks/useStorage';
+import { keyStorage } from './../../../provider/storage/keyStorage';
 
 export async function preloadContact() {
 	const contacts = await getContacts()
@@ -13,7 +15,8 @@ export async function preloadContact() {
 export const Contact = ({ metaData }) => {
 
 	const idioma = useContext(langContext)
-
+	const { setStorage } = useStorage();
+	const { lang } = keyStorage();
 	const navigate = useNavigate();
 	const { contacts } = useLoaderData();
 
@@ -21,9 +24,9 @@ export const Contact = ({ metaData }) => {
 		navigate(-1)
 	}
 
-	const change = (lang) => {
-		localStorage.setItem('lang', lang);
-		idioma.establecerLenguaje(lang);
+	const change = (lange) => {
+		setStorage(lang, { lang: lange });
+		idioma.establecerLenguaje(lange);
 	}
 
 
