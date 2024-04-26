@@ -3,10 +3,10 @@ import { LandingMetaData } from './landingMetaData';
 import { productLoader } from '../loaders/productLoader';
 
 const { index, product, contact, about } = LandingMetaData();
-const Index = lazy(async () => await import(/* webpackChunkName: "Index" */'../pages/index'));
-const Product = lazy(async () => await import(/* webpackChunkName: "Product" */'../pages/product'));
-const Contact = lazy(async () => await import(/* webpackChunkName: "Contact" */'../pages/contact'));
-const About = lazy(async () => await import(/* webpackChunkName: "About" */'../pages/about'));
+const Index = lazy(async () => await import('../pages/index'));
+const Product = lazy(async () => await import('../pages/product'));
+const Contact = lazy(async () => await import('../pages/contact'));
+const About = lazy(async () => await import('../pages/about'));
 
 
 export const landingRoutes = [

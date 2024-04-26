@@ -32,3 +32,5 @@ export const BackofficeLayout = () => {
 	)
 
 }
+
+export default BackofficeLayout;

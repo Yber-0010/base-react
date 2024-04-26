@@ -1,17 +1,19 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Loading } from "../../components/loading";
 import { Error404 } from "../../pages/error404"
 import { backofficeRoutes } from "./routes";
+import { BackofficeGuard } from './../../guard/backofficeGuard';
+
+const BackofficeLayout = lazy(async () => await import('./../layout/backofficeLayout'));
 
 export const BackofficeRouter = () => {
 
 	const backofficeRouter = {
 		path: '/',
-		async lazy() {
-			let { BackofficeGuard } = await import("../../guard/backofficeGuard");
-			let { BackofficeLayout } = await import("../layout/backofficeLayout");
-			return { element: <BackofficeGuard><BackofficeLayout /></BackofficeGuard> };
-		},
+		element:
+			<BackofficeGuard>
+				<BackofficeLayout />
+			</BackofficeGuard>,
 		errorElement:
 			<Error404 />,
 		children: [
