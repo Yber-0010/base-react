@@ -12,8 +12,7 @@ export const MetaTags = ({ metaData }) => {
 			<meta name="og:description" content={ogDescription} />
 			<meta name="robots" content={robot} />
 			<meta name="og:type" content="website" />
-			{/* tags para twitter */}
-			{/* <meta name="twitter:tittle" content={ogTitle}/> */}
+			{/* add your meta data here */}
 		</Helmet>
 	)
 }

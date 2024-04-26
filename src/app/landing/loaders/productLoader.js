@@ -1,6 +1,6 @@
 
 
-export const productHandler = ({ params }) => {
+export const productLoader = ({ params }) => {
 	const id = params.id;
 	console.log("id", id);
 	if (id === "2") {

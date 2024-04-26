@@ -14,6 +14,7 @@ const langContext = createContext<LangContextType | undefined>(undefined);
 const lenguajes = [
 	{ locale: 'es-ES', message: es },
 	{ locale: 'en-US', message: en }
+	//add your languages here
 ]
 
 const LangProvider = ({ children }) => {
@@ -23,9 +24,7 @@ const LangProvider = ({ children }) => {
 
 	let localePorDefecto: string = lenguajes[0].locale;
 	let mensajesPorDefecto: {} = es;
-	let { lang: lan }: any = getStorage(lang);
-	if (lan === undefined) { lan = localePorDefecto; }
-	console.log(lan)
+	let { lang: lan = localePorDefecto }: any = getStorage(lang);
 	if (lan) {
 		lenguajes.map((l) => {
 			if (l.locale === lan) {

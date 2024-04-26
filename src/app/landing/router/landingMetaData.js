@@ -1,18 +1,18 @@
 
 export const LandingMetaData = () => {
-    const metaData = {
+	const metaData = {
 		index: {
-			title:"Principal",
+			title: "Principal",
 		},
 		product: {
-			title:"Producto",
+			title: "Producto",
 		},
-        contact: {
-            title:"Contacto",
-        },
-        about: {
-            title:"Acerca de",
-        },
+		contact: {
+			title: "Contacto",
+		},
+		about: {
+			title: "Acerca de",
+		},
 	}
-    return metaData
+	return metaData
 }

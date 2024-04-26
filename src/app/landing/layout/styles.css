@@ -1,6 +1,7 @@
-.active{
-    color: green;
+.active {
+	color: green;
 }
-.pending{
-    color: red;
+
+.pending {
+	color: red;
 }

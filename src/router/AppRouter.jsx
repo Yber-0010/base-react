@@ -5,8 +5,10 @@ import { AuthRouter } from '../app/auth/router/authRouter';
 import { Error404 } from '../app/pages/error404';
 import { BaseRouter } from './BaseRouter';
 import { Suspense } from 'react';
+import { Loading } from '../app/components/loading';
 
 const baseRoute = '/index';
+
 const router = createHashRouter([
 	{
 		errorElement: <Error404 />,
@@ -21,10 +23,10 @@ const router = createHashRouter([
 
 export const AppRouter = () => {
 	return (
-		<Suspense fallback={ <span>Loading...</span> }>
-			<RouterProvider 
-			router={router} 
-			fallbackElement={<span>load....</span>}
+		<Suspense fallback={<Loading />}>
+			<RouterProvider
+				router={router}
+				fallbackElement={<Loading />}
 			/>
 		</Suspense>
 	)

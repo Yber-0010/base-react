@@ -19,7 +19,7 @@ export const AuthRouter = () => {
 				errorElement: <Error404 />,
 				children: [
 					{
-						path: 'login',
+						path: '/login',
 						element: <AuthLogin metaData={authLogin} />,
 					},
 				]
