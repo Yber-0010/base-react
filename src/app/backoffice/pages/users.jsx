@@ -9,3 +9,4 @@ export const Users = ({ metaData }) => {
 		</>
 	)
 }
+export default Users

@@ -18,7 +18,7 @@ export const Contact = ({ metaData }) => {
 	const { setStorage } = useStorage();
 	const { lang } = keyStorage();
 	const navigate = useNavigate();
-	const { contacts } = useLoaderData();
+	// const { contacts } = useLoaderData();
 
 	const gotoindex = () => {
 		navigate(-1)
@@ -70,3 +70,5 @@ export const Contact = ({ metaData }) => {
 		</>
 	)
 }
+
+export default Contact

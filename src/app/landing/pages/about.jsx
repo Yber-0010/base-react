@@ -8,3 +8,5 @@ export const About = ({ metaData }) => {
 		</>
 	)
 }
+
+export default About

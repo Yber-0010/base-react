@@ -8,3 +8,5 @@ export const Tickets = ({ metaData }) => {
 		</>
 	)
 }
+
+export default Tickets

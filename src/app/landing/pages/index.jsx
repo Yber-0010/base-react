@@ -9,3 +9,5 @@ export const Index = ({ metaData }) => {
 		</>
 	)
 }
+
+export default Index
