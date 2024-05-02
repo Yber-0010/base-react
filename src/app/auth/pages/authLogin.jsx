@@ -10,7 +10,7 @@ export const AuthLogin = ({ metaData }) => {
 	const { setStorage } = useStorage();
 	const login = () => {
 		setStorage(auth, { auth:"true"});
-		navigate('/dashboard/user');
+		navigate('/dashboard/users');
 	}
 
 	return (

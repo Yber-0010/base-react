@@ -10,31 +10,31 @@ export const LandinLayout = () => {
 			<nav>
 				<ul>
 					<li>
-						<Link to={`index`}>Home</Link>
+						<Link to={`/home`}>Home</Link>
 					</li>
 					<li>
-						<Link to={`contact`}>Contact</Link>
+						<Link to={`/contact`}>Contact</Link>
 					</li>
 					<li>
-						<Link to={`product/2`}>product 2</Link>
+						<Link to={`/product/2`}>product 2</Link>
 					</li>
 					<li>
-						<Link to={`product/3`}>product 3</Link>
+						<Link to={`/product/3`}>product 3</Link>
 					</li>
 					<li>
 						<Link to={`/about`}>About</Link>
 					</li>
 					<li>
-						<Link to={`login`}>login</Link>
+						<Link to={`/login`}>login</Link>
 					</li>
 					<li>
-						<Link to={`dashboard`}>dashboard</Link>
+						<Link to={`/dashboard`}>dashboard</Link>
 					</li>
 					<li>
-						<Link to={`dashboard/users`}>dashboard users</Link>
+						<Link to={`/dashboard/users`}>dashboard users</Link>
 					</li>
 					<li>
-						<Link to={`dashboard/tickets`}>dashboard tickets</Link>
+						<Link to={`/dashboard/tickets`}>dashboard tickets</Link>
 					</li>
 					<NavLink
 						to={`/contact`}

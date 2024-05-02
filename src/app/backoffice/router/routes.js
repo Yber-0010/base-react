@@ -11,10 +11,10 @@ export const backofficeRoutes = [
 		path: '/dashboard',
 		element: Navigate,
 		toyes: true,
-		to: '/dashboard/user'
+		to: '/dashboard/users'
 	},
 	{
-		path: 'user',
+		path: 'users',
 		metadata: users,
 		element: Users,
 		toyes: false
@@ -29,6 +29,6 @@ export const backofficeRoutes = [
 		path: '*',
 		element: Navigate,
 		toyes: true,
-		to: '/dashboard/user'
+		to: '/dashboard/users'
 	}
 ]

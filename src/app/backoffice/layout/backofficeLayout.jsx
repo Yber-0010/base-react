@@ -14,13 +14,13 @@ export const BackofficeLayout = () => {
 			<nav>
 				<ul>
 					<li>
-						<Link to={`index`}>Home</Link>
+						<Link to={`/home`}>Home</Link>
 					</li>
 					<li>
-						<Link to={`dashboard/user`}>users</Link>
+						<Link to={`/dashboard/users`}>users</Link>
 					</li>
 					<li>
-						<Link to={`dashboard/tickets`}>tickets</Link>
+						<Link to={`/dashboard/tickets`}>tickets</Link>
 					</li>
 					<li>
 						<button onClick={logout}>logout</button>

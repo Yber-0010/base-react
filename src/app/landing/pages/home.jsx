@@ -1,13 +1,13 @@
 import { MetaTags } from "../../helpers/MetaTags"
 
-export const Index = ({ metaData }) => {
+export const Home = ({ metaData }) => {
 
 	return (
 		<>
 			<MetaTags metaData={metaData} />
-			<div>Index</div>
+			<div>Home</div>
 		</>
 	)
 }
 
-export default Index
+export default Home
