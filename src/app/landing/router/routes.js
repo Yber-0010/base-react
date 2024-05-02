@@ -1,15 +1,15 @@
 import { lazy } from 'react';
-import { LandingMetaData } from './landingMetaData';
+import { landingMetaData } from './landing.metadata';
 import { productLoader } from '../loaders/productLoader';
 
-const { index, product, contact, about } = LandingMetaData();
+const { index, product, contact, about } = landingMetaData();
 const Home = lazy(async () => await import('../pages/home'));
 const Product = lazy(async () => await import('../pages/product'));
 const Contact = lazy(async () => await import('../pages/contact'));
 const About = lazy(async () => await import('../pages/about'));
 
 
-export const landingRoutes = [
+export const routes = [
 	{
 		path: '/home',
 		element: Home,

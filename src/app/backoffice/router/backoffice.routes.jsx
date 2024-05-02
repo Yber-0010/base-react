@@ -1,14 +1,14 @@
 import { Suspense, lazy } from "react";
 import { Loading } from "../../components/loading";
 import { Error404 } from "../../pages/error404"
-import { backofficeRoutes } from "./routes";
-import { BackofficeGuard } from './../../guard/backofficeGuard';
+import { routes } from "./routes";
+import { BackofficeGuard } from '../../guard/backofficeGuard';
 
-const BackofficeLayout = lazy(async () => await import('./../layout/backofficeLayout'));
+const BackofficeLayout = lazy(async () => await import('../layout/backofficeLayout'));
 
-export const BackofficeRouter = () => {
+export const backofficeRouter = () => {
 
-	const backofficeRouter = {
+	const br = {
 		path: '/',
 		element:
 			<BackofficeGuard>
@@ -20,7 +20,7 @@ export const BackofficeRouter = () => {
 			{
 				path: '/dashboard',
 				errorElement: <Error404 />,
-				children: backofficeRoutes.map(({ path, metadata, element: Component, toyes, to }) => ({
+				children: routes.map(({ path, metadata, element: Component, toyes, to }) => ({
 					path: path,
 					element: (
 						<Suspense fallback={<Loading />}>
@@ -36,5 +36,5 @@ export const BackofficeRouter = () => {
 		]
 
 	}
-	return backofficeRouter
+	return br
 }

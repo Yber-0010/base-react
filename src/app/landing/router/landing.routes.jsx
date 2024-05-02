@@ -1,19 +1,19 @@
 import { Suspense } from "react"
 import { Error404 } from "../../pages/error404"
 import { LandinLayout } from "../layout/landinLayout"
-import { landingRoutes } from "./routes"
+import { routes } from "./routes"
 import { Loading } from "../../components/loading"
 
-export const LandingRouter = () => {
+export const landingRoutes = () => {
 
-	const landingRouter = {
+	const lr = {
 		path: '/',
 		element: <LandinLayout />,
 		errorElement: <Error404 />,
 		children: [
 			{
 				errorElement: <Error404 />,
-				children: landingRoutes.map(({ element: Component, metaData, path, loader }) => ({
+				children: routes.map(({ element: Component, metaData, path, loader }) => ({
 					path: path,
 					element: (
 						<Suspense fallback={<Loading />}>
@@ -27,5 +27,5 @@ export const LandingRouter = () => {
 		]
 
 	}
-	return landingRouter
+	return lr
 }

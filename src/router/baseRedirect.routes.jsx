@@ -2,9 +2,9 @@ import { Navigate } from "react-router-dom"
 import { Error404 } from "../app/pages/error404"
 
 
-export const BaseRouter = (baseroute='/') => {
-	
-	const landingRouter = {
+export const baseRedirectRouter = (baseroute = '/') => {
+
+	const brr = {
 		path: '',
 		errorElement: <Error404 />,
 		children: [
@@ -24,5 +24,5 @@ export const BaseRouter = (baseroute='/') => {
 		]
 
 	}
-	return landingRouter
+	return brr
 }

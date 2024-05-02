@@ -1,5 +1,5 @@
 
-export const BackofficeMetaData = () => {
+export const backofficeMetaData = () => {
 	const metaData = {
 		users: {
 			title: "users",

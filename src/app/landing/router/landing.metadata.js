@@ -1,5 +1,5 @@
 
-export const LandingMetaData = () => {
+export const landingMetaData = () => {
 	const metaData = {
 		index: {
 			title: "Home",

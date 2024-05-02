@@ -1,12 +1,12 @@
 import { lazy } from 'react';
-import { BackofficeMetaData } from "./backofficeMetaData";
+import { backofficeMetaData } from "./backoffice.metadata";
 import { Navigate } from 'react-router-dom';
 
-const { users, tickets } = BackofficeMetaData()
+const { users, tickets } = backofficeMetaData()
 const Users = lazy(async () => await import('../pages/users'));
 const Tickets = lazy(async () => await import('../pages/tickets'));
 
-export const backofficeRoutes = [
+export const routes = [
 	{
 		path: '/dashboard',
 		element: Navigate,

@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { RouterProvider, createHashRouter } from 'react-router-dom'
 
-import { BaseRouter } from './BaseRouter';
-import { AuthRouter } from '../app/auth/router/authRouter';
-import { LandingRouter } from '../app/landing/router/landingRouter';
-import { BackofficeRouter } from '../app/backoffice/router/BackofficeRouter';
+import { baseRedirectRouter } from './baseRedirect.routes';
+import { authRoutes } from '../app/auth/router/auth.routes';
+import { landingRoutes } from '../app/landing/router/landing.routes';
+import { backofficeRouter } from '../app/backoffice/router/backoffice.routes';
 import { Error404 } from '../app/pages/error404';
 import { Loading } from '../app/components/loading';
 
@@ -14,15 +14,15 @@ const router = createHashRouter([
 	{
 		errorElement: <Error404 />,
 		children: [
-			BaseRouter(baseRoute),
-			AuthRouter(),
-			LandingRouter(),
-			BackofficeRouter(),
+			baseRedirectRouter(baseRoute),
+			authRoutes(),
+			landingRoutes(),
+			backofficeRouter(),
 		],
 	}
 ])
 
-export const AppRouter = () => {
+export const Router = () => {
 	return (
 		<Suspense fallback={<Loading />}>
 			<RouterProvider

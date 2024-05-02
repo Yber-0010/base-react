@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { AppRouter } from './router/AppRouter'
+import { Router } from './router/router'
 import { LangProvider } from './app/context/langContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<LangProvider>
-			<AppRouter />
+			<Router />
 		</LangProvider>
 	</React.StrictMode>,
 )

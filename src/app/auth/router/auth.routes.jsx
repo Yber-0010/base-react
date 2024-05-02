@@ -1,13 +1,13 @@
 import { Error404 } from "../../pages/error404"
 import { AuthLayout } from "../layout/authLayout"
-import { AuthLogin } from "../pages/authLogin"
+import { Login } from "../pages/login"
 import { AuthGuard } from '../../guard/authGuard';
-import { AuthMetaData } from "./authMetaData";
+import { authMetaData } from "./auth.metadata";
 
 
-export const AuthRouter = () => {
-	const { authLogin } = AuthMetaData();
-	const authRouter = {
+export const authRoutes = () => {
+	const { authLogin } = authMetaData();
+	const ar = {
 		path: '/',
 		element:
 			<AuthGuard>
@@ -20,11 +20,11 @@ export const AuthRouter = () => {
 				children: [
 					{
 						path: '/login',
-						element: <AuthLogin metaData={authLogin} />,
+						element: <Login metaData={authLogin} />,
 					},
 				]
 			}
 		]
 	}
-	return authRouter
+	return ar
 }
