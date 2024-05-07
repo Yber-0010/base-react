@@ -1,7 +1,7 @@
 
 export const authMetaData = () => {
 	const metaData = {
-		authLogin: {
+		login: {
 			title: "login",
 		},
 	}

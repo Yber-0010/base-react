@@ -25,7 +25,7 @@ export const LandinLayout = () => {
 						<Link to={`/about`}>About</Link>
 					</li>
 					<li>
-						<Link to={`/login`}>login</Link>
+						<Link to={`/auth/login`}>login</Link>
 					</li>
 					<li>
 						<Link to={`/dashboard`}>dashboard</Link>

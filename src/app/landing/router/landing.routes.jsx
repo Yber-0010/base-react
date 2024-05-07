@@ -4,7 +4,7 @@ import { LandinLayout } from "../layout/landinLayout"
 import { routes } from "./routes"
 import { Loading } from "../../components/loading"
 
-export const landingRoutes = () => {
+export const landingRouter = () => {
 
 	const lr = {
 		path: '/',

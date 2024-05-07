@@ -7,7 +7,7 @@ export default defineConfig(({ command, mode }) => {
 	return {
 		plugins: [react()],
 		define: {
-            "process.env.REACT_APP_SECURE_LOCAL_STORAGE_HASH_KEY": JSON.stringify(env.REACT_APP_SECURE_LOCAL_STORAGE_HASH_KEY),
-        },
+			"process.env.REACT_APP_SECURE_LOCAL_STORAGE_HASH_KEY": JSON.stringify(env.REACT_APP_SECURE_LOCAL_STORAGE_HASH_KEY),
+		},
 	}
 });

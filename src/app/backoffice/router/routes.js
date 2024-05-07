@@ -1,6 +1,7 @@
 import { lazy } from 'react';
-import { backofficeMetaData } from "./backoffice.metadata";
 import { Navigate } from 'react-router-dom';
+
+import { backofficeMetaData } from "./backoffice.metadata";
 
 const { users, tickets } = backofficeMetaData()
 const Users = lazy(async () => await import('../pages/users'));

@@ -1,8 +1,8 @@
+import { useNavigate } from "react-router-dom";
+import { keyStorage } from "../../../provider/storage/keyStorage";
+import { MetaTags } from "../../helpers/MetaTags";
+import { useStorage } from "../../hooks/useStorage";
 
-import { useNavigate } from 'react-router-dom'
-import { MetaTags } from '../../helpers/MetaTags';
-import { useStorage } from '../../hooks/useStorage';
-import { keyStorage } from '../../../provider/storage/keyStorage';
 
 export const Login = ({ metaData }) => {
 	const { auth } = keyStorage();
@@ -12,7 +12,6 @@ export const Login = ({ metaData }) => {
 		setStorage(auth, { auth: "true" });
 		navigate('/dashboard/users');
 	}
-
 	return (
 		<>
 			<MetaTags metaData={metaData} />
@@ -28,3 +27,5 @@ export const Login = ({ metaData }) => {
 		</>
 	)
 }
+
+export default Login;
