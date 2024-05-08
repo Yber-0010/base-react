@@ -1,12 +1,5 @@
-@import url('@fontsource/roboto/300.css');
-
-:root {
-    --roboto-300: 'Roboto', sans-serif;
-}
-
 * {
     border: 0;
     margin: 0;
-    font-family: var(--roboto-300);
 }
 

@@ -1,5 +1,6 @@
 import { Outlet, Link, NavLink, useNavigation } from "react-router-dom";
 import './styles.css'
+import { UiTogleMode } from "../../../ui/buttons/uiTogleMode";
 export const LandinLayout = () => {
 
 	const navigation = useNavigation();
@@ -9,6 +10,9 @@ export const LandinLayout = () => {
 			<div>LandinLayout</div>
 			<nav>
 				<ul>
+					<li>
+						<UiTogleMode />
+					</li>
 					<li>
 						<Link to={`/home`}>Home</Link>
 					</li>

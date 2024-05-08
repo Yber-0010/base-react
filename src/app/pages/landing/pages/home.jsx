@@ -1,6 +1,5 @@
-import { Button } from "@mui/material"
 import { MetaTags } from "../../../helpers/MetaTags"
-
+import { UiPrimaryButton } from './../../../ui/buttons/uiPrimaryButton';
 
 export const Home = ({ metaData }) => {
 
@@ -8,7 +7,7 @@ export const Home = ({ metaData }) => {
 		<>
 			<MetaTags metaData={metaData} />
 			<h4>Home</h4>
-			<Button variant="contained">Hello world</Button>
+			<UiPrimaryButton />
 		</>
 	)
 }
