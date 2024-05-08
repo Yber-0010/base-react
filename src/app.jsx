@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Router } from './router/router'
-import { LangProvider } from './app/context/langContext'
+import { Providers } from './app/context/providers';
+import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<LangProvider>
+		<Providers>
 			<Router />
-		</LangProvider>
+		</Providers>
 	</React.StrictMode>,
 )
