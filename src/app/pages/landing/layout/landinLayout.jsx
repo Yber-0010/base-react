@@ -1,6 +1,7 @@
 import { Outlet, Link, NavLink, useNavigation } from "react-router-dom";
+import { UiTogleMode } from "../../../components/ui/buttons/uiTogleMode";
 import './styles.css'
-import { UiTogleMode } from "../../../ui/buttons/uiTogleMode";
+
 export const LandinLayout = () => {
 
 	const navigation = useNavigation();

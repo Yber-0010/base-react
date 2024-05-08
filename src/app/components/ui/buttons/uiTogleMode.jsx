@@ -4,7 +4,7 @@ import { Box, IconButton } from "@mui/material"
 import { useTheme } from "@emotion/react";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { ColorModeContext } from "../../../theme/appTheme";
+import { ColorModeContext } from './../../../../theme/appTheme';
 
 export const UiTogleMode = () => {
 	
