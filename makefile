@@ -1,14 +1,17 @@
+# dev, cert, prod (eg => MODE=dev ).
+MODE=dev
+
 run:
-	yarn run dev --port 5174 --mode dev
+	bun run dev --port 5174 --mode ${MODE}
 
 # create .env.dev
 build:
-	yarn run build --mode dev
+	bun run build --mode ${MODE}
 
 #create .env.cert
 buildc:
-	yarn run build --mode cert
+	bun run build --mode cert
 
-#create .env.pord
+#create .env.prod
 buildp:
-	yarn run build --mode prod
+	bun run build --mode prod
