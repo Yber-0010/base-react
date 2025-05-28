@@ -20,18 +20,24 @@ export const authRouter = () => {
 			{
 				path: '/auth',
 				errorElement: <Error404 />,
-				children: routes.map(({ path, element: Component, toyes, to, metadata }) => ({
-					path: path,
-					element: (
-						<Suspense fallback={<Loading />}>
-							{toyes ? (
-								<Component to={to} />
-							) : (
-								<Component metaData={metadata} />
-							)}
-						</Suspense>
+				children: routes.map(({ path, element: Component, toyes, to, metadata, index }) =>
+					Object.assign(
+						index ? { index: true } : { path: path },
+						{
+							path: path,
+							element: (
+								<Suspense fallback={<Loading />}>
+									{toyes ? (
+										<Component to={to} />
+									) : (
+										<Component metaData={metadata} />
+									)}
+								</Suspense>
+							),
+							
+						}
 					)
-				}))
+				)
 			}
 		]
 

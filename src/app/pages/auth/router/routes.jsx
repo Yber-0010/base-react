@@ -10,10 +10,10 @@ export const routes = [
 		path: '/auth',
 		element: Navigate,
 		toyes: true,
-		to: '/auth/login'
+		to: '/auth'
 	},
 	{
-		path: 'login',
+		index: true,
 		element: Login,
 		toyes: false,
 		metadata: login
@@ -22,6 +22,6 @@ export const routes = [
 		path: '*',
 		element: Navigate,
 		toyes: true,
-		to: '/auth/login'
+		to: '/auth'
 	}
 ]

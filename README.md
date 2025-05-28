@@ -5,23 +5,25 @@ but you can use createBrowserRouter when you need use root path /
 
 the result when you build, if you use createHashRouter, you need to change href or src of "/" to "./" or "" notingh.
 
-with react router dom
+with 
+react v19
+react router dom v7
+mui v7
 
 install
 ```bash
-yarn
+bun install
 ```
 
 run
 ```bash
-yarn run dev
+bun run dev
 ```
 
 build
 ```bash
-yarn run build
+bun run build
 ```
 
 example
-[https://iberchambi.mi-galeria.com/base-react4/]
 [https://yber-0010.github.io/base-react/#/index]

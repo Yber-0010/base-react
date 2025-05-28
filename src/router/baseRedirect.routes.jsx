@@ -21,8 +21,7 @@ export const baseRedirectRouter = (baseroute) => {
 					}
 				]
 			}
-		]
-
+		],
 	}
 	return brr
 }

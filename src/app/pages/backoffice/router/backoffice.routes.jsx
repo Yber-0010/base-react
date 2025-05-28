@@ -20,18 +20,22 @@ export const backofficeRouter = () => {
 			{
 				path: '/dashboard',
 				errorElement: <Error404 />,
-				children: routes.map(({ path, metadata, element: Component, toyes, to }) => ({
-					path: path,
-					element: (
-						<Suspense fallback={<Loading />}>
-							{toyes ? (
-								<Component to={to} />
-							) : (
-								<Component metaData={metadata} />
-							)}
-						</Suspense>
+				children: routes.map(({ path, metadata, element: Component, toyes, to }) =>
+					Object.assign(
+						path ? { path: path } : { index: true },
+						{
+							element: (
+								<Suspense fallback={<Loading />}>
+									{toyes ? (
+										<Component to={to} />
+									) : (
+										<Component metaData={metadata} />
+									)}
+								</Suspense>
+							)
+						}
 					)
-				}))
+				)
 			}
 		]
 

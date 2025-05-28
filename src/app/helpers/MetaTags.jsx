@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 export const MetaTags = ({ metaData }) => {
 
 	const { title, description = '', ogTitle = '', ogDescription = '', robot = '' } = metaData;
-
+	console.log('metaData', metaData);
 	return (
 		<Helmet>
 			<title>{title}</title>

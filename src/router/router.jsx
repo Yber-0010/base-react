@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 
 import { Error404 } from '../app/pages/error404';
 import { Loading } from '../app/components/loading';
@@ -8,20 +8,26 @@ import { baseRedirectRouter } from './baseRedirect.routes';
 import { authRouter } from './../app/pages/auth';
 import { landingRouter } from '../app/pages/landing';
 import { backofficeRouter } from '../app/pages/backoffice';
+import { basePath } from '../provider/api/api';
 
 const baseRoute = '/home';
 
-const router = createHashRouter([
+const router = createHashRouter(
+	[
+		{
+			errorElement: <Error404 />,
+			children: [
+				baseRedirectRouter(baseRoute),
+				landingRouter(),
+				authRouter(),
+				backofficeRouter(),
+			],
+		}
+	],
 	{
-		errorElement: <Error404 />,
-		children: [
-			baseRedirectRouter(baseRoute),
-			landingRouter(),
-			authRouter(),
-			backofficeRouter(),
-		],
-	}
-])
+		basename: basePath,
+	},
+)
 
 export const Router = () => {
 	return (

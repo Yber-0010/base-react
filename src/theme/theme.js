@@ -7,8 +7,8 @@ export const getDesignTokens = (mode) => ({
 			light: '#f1f1f1',
 			dark: '#212121',
 		},
-		primaryButton: {
-			main: mode === 'light' ? '#ffb74d' : '#f57c00',
+		primary: {
+			main: mode === 'light' ? '#ffcc80' : '#ff9800',
 			light: '#ffcc80',
 			dark: '#ff9800',
 		},
