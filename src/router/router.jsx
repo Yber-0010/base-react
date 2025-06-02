@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from "react-router";
 
 import { Error404 } from '../app/pages/error404';
 import { Loading } from '../app/components/loading';
@@ -12,7 +12,7 @@ import { basePath } from '../provider/api/api';
 
 const baseRoute = '/home';
 
-const router = createHashRouter(
+const router = createBrowserRouter(
 	[
 		{
 			errorElement: <Error404 />,
